@@ -1,0 +1,53 @@
+$OrderWrapperColor:rgb(255, 255, 255);
+$OrderWrapperColorHover:rgb(185, 255, 119);
+
+@mixin DetailWrapper($Justify:flex-end) {
+    display: flex;
+    font-family: tahoma;
+    font-size: 14px;
+    margin-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: darken($OrderWrapperColor, 50%);
+    justify-content: $Justify;
+}
+
+.Header {
+
+    font-weight: 900;
+}
+
+
+
+.DetailWrapper {
+    display: block;
+    width: auto;
+    margin-left: 70px;
+    margin-right: 20px;
+    padding: 10px;
+    padding-top: 20px;
+}
+
+
+
+.DetailWrapperName {
+    @include DetailWrapper(flex-start);
+    
+}
+
+.DetailWrapperQuantity {
+    @include DetailWrapper();
+}
+
+.DetailWrapperPrice {
+    @include DetailWrapper();
+}
+
+.DetailWrapperSum {
+    @include DetailWrapper();
+}
+
+.DetailWrapperNameGrid {
+    display: grid;
+    grid-template-columns: minmax(500px, 1fr) 120px 90px 90px;
+}

@@ -1,0 +1,32 @@
+$OrderWrapperColor:rgb(255, 255, 255);
+$OrderWrapperColorHover:rgb(185, 255, 119);
+
+
+.FilterWrapper {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top:70px;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+
+.FilterWrapperHeader {
+    color: darken($OrderWrapperColor, 40%);
+    font-size: 14px;
+    font-family: tahoma;
+    font-weight: 800;
+    margin-right: 7px
+}
+
+
+.FilterWrapperInput {
+    border-radius: 5px;
+    border: solid 2px rgb(126, 212, 28);
+    font-size: 18px;
+    padding:6px;
+    color: darken($OrderWrapperColor, 40%);
+    
+}
