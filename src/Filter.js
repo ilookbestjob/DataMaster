@@ -6,7 +6,13 @@ class Filter extends React.Component {
   constructor(props) {
     super(props);
     this.PlayAreaDiv = React.createRef();
+    this.timeout = null;
+    //добавим секундную задержку, чтобы не гонять траффик на каждую введенную букву
     this.Filter = () => {
+      clearTimeout(this.timeout);
+      setTimeout(this.GetData, 1000);
+    };
+    this.GetData = () => {
       fetch(
         "http://127.0.0.1:8080/api/order?filter=" +
           this.PlayAreaDiv.current.value
@@ -15,11 +21,8 @@ class Filter extends React.Component {
         .then(
           result => {
             this.props.SetOrders(result);
-            // console.log( this.PlayAreaDiv.current.value)
           },
-          error => {
-            // this.props.SetOrderError(error);
-          }
+          error => {}
         );
     };
   }
